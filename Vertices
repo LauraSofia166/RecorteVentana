@@ -1,0 +1,37 @@
+class Vertices{
+  int tam;
+   IntList x1=new IntList();
+   IntList y1=new IntList();
+  Vertices(){
+  }
+  void Vertices(int tam,int xx,int yy,IntList x,IntList y){
+  clear();
+  beginShape();
+ stroke(255);
+
+    vertex((-tam/2)+xx,(-tam/2)+yy,(tam/2)+xx,(-tam/2)+yy);
+    vertex((-tam/2)+xx,(tam/2)+yy,(tam/2)+xx,(tam/2)+yy);
+    vertex((-tam/2)+xx,(-tam/2)+yy,(-tam/2)+xx,(tam/2)+yy);
+    vertex((tam/2)+xx,(-tam/2)+yy,(tam/2)+xx,(tam/2)+yy);
+    vertex((-tam/2)+xx,(-tam/2)+yy,(tam/2)+xx,(-tam/2)+yy);
+    vertex((-tam/2)+xx,(tam/2)+yy,(tam/2)+xx,(tam/2)+yy);
+
+   
+    this.recorte(x,y,tam,xx,yy);
+    endShape();
+  }
+  
+  
+  void recorte(IntList x,IntList y,int tam, int xx, int yy){
+    
+    x1.clear();
+    y1.clear();
+    for(int i=0;i<x.size();i++){
+    if(x.get(i)<=tam/2+xx&&x.get(i)>=-tam/2+xx&&y.get(i)<=tam/2+yy&&y.get(i)>=-tam/2+yy){
+ 
+    point(x.get(i),y.get(i));
+     stroke(255,255,255);
+    }
+    }
+  }
+}
