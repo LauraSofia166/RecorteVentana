@@ -1,0 +1,12 @@
+void setup(){
+  size(600,600);
+ 
+}
+Vertices c=new Vertices();
+Points p=new Points(255);
+void draw(){
+  
+  c.vertices(150,mouseX,mouseY,p.x,p.y);
+ 
+  
+}
